@@ -21,8 +21,6 @@ public class WeekViewModel extends BaseObservable {
         app = application;
         week = new Week();
 
-        calculateTotal();
-
     }
 
     public WeekViewModel(Application application, Week week){
@@ -34,8 +32,8 @@ public class WeekViewModel extends BaseObservable {
     public void calculateTotal(){
         if (!inputStart.isEmpty()){
             int start = Integer.parseInt(inputStart);
+            notifyChange();
             weekCalculation = week.calculateTotal(start);
-            Log.d("Calculator","Start amount: "+start);
             updateOutputs();
         }
     }
@@ -53,6 +51,6 @@ public class WeekViewModel extends BaseObservable {
     }
 
     private void updateOutputs(){
-        outputTotalAmount = app.getString(R.string.total,weekCalculation.getTotal() );
+        outputTotalAmount = ""+ weekCalculation.getTotal() ;
     }
 }

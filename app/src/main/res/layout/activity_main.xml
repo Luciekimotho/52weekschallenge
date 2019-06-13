@@ -13,8 +13,9 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
         <LinearLayout
+            android:id="@+id/linearlayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <EditText
@@ -43,26 +44,21 @@
                 tools:layout_editor_absoluteY="94dp"
                 android:selectAllOnFocus="true"/>
 
-            <EditText
-                android:id="@+id/Total2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/total"
-                android:inputType="textPersonName"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="94dp" />
-
             <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/calc"
-                tools:layout_editor_absoluteX="44dp"
-                tools:layout_editor_absoluteY="91dp" />
+                android:text="Button"
+                android:onClick="@{() -> vm.calculateTotal()}"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/week_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp">
+
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
-
-
     </android.support.constraint.ConstraintLayout>
 </layout>

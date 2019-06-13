@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="vm"
+            type="com.luciekimotho.a52weekschallenge.viewmodel.WeekViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/outputWeekNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/outputWeekDeposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/outputWeekTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+        </LinearLayout>
+
+</layout>
+
