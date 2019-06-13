@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+           name="vm"
+            type="com.luciekimotho.a52weekschallenge.viewmodel.WeekViewModel"/>
+    </data>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="153dp"
-            android:layout_marginRight="153dp"
-            android:ems="10"
-            android:hint="@string/start"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="35dp" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/total"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="94dp" />
+            <EditText
+                android:id="@+id/inputStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="153dp"
+                android:layout_marginRight="153dp"
+                android:ems="10"
+                android:hint="@string/start"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="35dp"
+                android:text="@={vm.inputStart}"
+                android:selectAllOnFocus="true"/>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/calc"
-            tools:layout_editor_absoluteX="44dp"
-            tools:layout_editor_absoluteY="91dp" />
+            <EditText
+                android:id="@+id/outputTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="@={vm.outputTotalAmount}"
+                android:hint="@string/total"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="94dp"
+                android:selectAllOnFocus="true"/>
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/Total2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/total"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="94dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calc"
+                tools:layout_editor_absoluteX="44dp"
+                tools:layout_editor_absoluteY="91dp" />
+
+        </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>
